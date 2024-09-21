@@ -1,59 +1,76 @@
-<script setup>
-import {  ref } from 'vue'
+<script>
 
-import FirstTask from './components/FirstTask.vue';
-const count = ref(-0)
-const message = ref('FirstTask')
-const text = ref('')
-function increment(){
-count.value++
+import AppBar from './components/AppBar.vue';
+import SideBar from './components/SideBar.vue';
+import ManageTask from './components/ManageTask.vue';
+import TaskColumn from './components/TaskColumn.vue';
+export default {
+  components: { AppBar, SideBar, ManageTask,TaskColumn },
+  data() {
+    return {
+      isSidebarVisible: true
+    }
+  },
+  methods: {
+    toggleSidebar() {
+      this.isSidebarVisible = !this.isSidebarVisible;
+    }
+  }
 }
-const awesome = ref(true)
-function toggle() {
- awesome.value = !awesome.value
- }
 </script>
 
 <template>
+  <div class="app-container ">
+  <div class="app-bar">
+    <AppBar @toggle-sidebar="toggleSidebar" />
+     </div>
 
-   <h1 class="heading">{{message}}</h1>
-  
-   <button @click="increment">Count is: {{count}}</button>
-   <input class="input" v-model = "text" placeholder=" Enter name">
-   <p>{{ text }}</p>
-  <FirstTask msg="Color Changed to red" />
-
-  <button @click="toggle"> Toggle</button>
-  <h1 v-if="awesome">Vue is awesome!</h1>
-  <h1 v-else>Oh no</h1>
+    <div class="main-content ">
+    <div class="side-bar">
+     <SideBar :isVisible="isSidebarVisible"/>
+     </div>
+      <div class="content-area">
+        <ManageTask />
+        <TaskColumn/>
+      </div>
+    </div>
+  </div>
 </template>
 
-<style>
-.input{
-font-weight: 100;
-  font-size: 2.0rem;
-  position: relative;
-  top: -5px;
-  right: 10px;
-  }
-p{
-font-weight: 100;
-  font-size: 2.0rem;
-  position: relative;
-  top: -5px;
-  right: 10px;
+<style scoped>
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f6f9;
+  margin: 0;
+  padding: 0;
 }
-button{
-  width:250px;
-  position: relative;
-  top: -5px;
-  right: 10px;
-  }
-.heading{
-  color:black;
-  text-align:center;
-  top:-40px;
 
-  }
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; 
+}
+.app-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px; 
+  z-index: 1000; 
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  margin-top: 60px;
+}
+
+.content-area {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  overflow-y: auto
+} 
 
 </style>
