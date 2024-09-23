@@ -1,0 +1,17 @@
+git config --global user.name "[name used in GitHub]"
+Sets the name you want attached to your commit transactions
+
+git config --global user.email "[email id used to open GitHub account]"
+Sets the email you want attached to your commit transactions
+
+git clone [url]
+Clone or download a repository that already exists on GitHub
+ 
+git add [file with extension]
+Snapshots the file in preparation for sending to GitHub
+
+git commit -m "[comment to be added along with the file that is being uploaded]"
+Records file snapshots permanently
+
+git push
+Uploads all local branch commits to GitHub
