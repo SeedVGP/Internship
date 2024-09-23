@@ -1,4 +1,5 @@
 <template>
+<ManageTask />
   <div class="container position-relative ">
   <button class="btn stage-button  btn-outline-dark position-absolute top-0 end-0">
         Stage
@@ -46,9 +47,10 @@
 import TaskCard from './TaskCard.vue'
 import TaskCard2 from './TaskCard2.vue'
 import TaskCard3 from './TaskCard3.vue'
+import ManageTask from './ManageTask.vue'
 
 export default {
-  components: { TaskCard, TaskCard2, TaskCard3 },
+  components: { TaskCard, TaskCard2, TaskCard3,ManageTask },
 }
 </script>
 
