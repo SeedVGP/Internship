@@ -10,16 +10,11 @@
                 <span class="menu-name ms-2" :class="{ 'd-none': !isVisible, 'd-sm-inline': isVisible }">{{ menuItem.name }}</span>
              </router-link>
             </li>
-          </ul>
-         
+          </ul>  
         </div>
-    
       </div>
-       
     </div>
-     
   </div>
-  
 </template>
 
 <script>
