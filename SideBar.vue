@@ -5,7 +5,6 @@
         <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
           <ul class="nav nav-pills flex-column mb-0 align-items-center align-items-sm-start" id="menu">
             <li v-for="(menuItem, index) in menuItems" :key="index" class="nav-item">
-            <router-link :to="menuItem.path" class="nav-link px-0 align-middle">
               <a href="#" class="nav-link px-0 align-middle">
                 <i :class="menuItem.icon" class="menu-icon"></i>
                 <span class="menu-name ms-2" :class="{ 'd-none': !isVisible, 'd-sm-inline': isVisible }">{{ menuItem.name }}</span>
