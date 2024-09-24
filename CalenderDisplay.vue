@@ -1,8 +1,15 @@
 <template>
-  <div class="container mt-4">
-    <h2>Calendar</h2>
-    <vue-cal />
-  </div>
+<div class="calendar">
+<vue-cal
+    class="vuecal--rounded-theme vuecal--green-theme"
+    xsmall
+    hide-view-selector
+    :time="false"
+    active-view="month"
+    :disable-views="['week']"
+    style="width: 500px;height: 300px;">
+</vue-cal>
+</div>
 </template>
 
 <script>
@@ -17,5 +24,10 @@ export default {
 </script>
 
 <style scoped>
-
+.calendar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:40px; 
+}
 </style>
