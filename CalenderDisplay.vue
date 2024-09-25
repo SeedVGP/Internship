@@ -14,9 +14,17 @@
       <h3>To-Do List</h3>
       <div class="input-container">
       <input v-model="newTask" placeholder="Add a new task" />
-      <button class="btn-add"><i class="fas fa-plus"></i></button>
+      <button class="btn-add" @click="addTask"><i class="fas fa-plus"></i></button>
       <button @click="closeTodoList" class="btn-close"></button>
     </div>
+    <ul class="list">
+      <li v-for="(task,index) in tasks" :key="index" class="list2">
+      {{task}}
+      <div class="action">
+      <button  class="btn btn-delete" @click="removeTask(index)"><i class="fas fa-trash-alt"></i></button>
+     </div>
+      </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -31,9 +39,19 @@ export default {
   data() {
     return {
       showTodoList: false,
+      newTask:'',
+      tasks: []
     };
   },
   methods: {
+   addTask() {
+      this.tasks.push(this.newTask);
+      this.newTask = '';
+   },
+   removeTask(index) {
+     this.tasks.splice(index, 1);
+    
+   },
     onDateClick() {
       this.showTodoList = true;
     },
@@ -57,6 +75,7 @@ export default {
   background-color: #fff;
   border: 1px solid #ccc;
   text-align: center; 
+  width:400px;
 }
 .todo-modal button {
   margin: 13px;
@@ -68,6 +87,7 @@ export default {
   margin-bottom: 20px;
 }
 input {
+  flex: 1;
   padding: 10px;
   border-radius: 5px;
   font-size: 16px;
@@ -80,6 +100,34 @@ input {
   border-radius: 5px;
   border: none;
   color: white;
+}
+.list {
+  list-style-type:none ;
+  padding:0;
+  font-size: 20px;
+}
+.btn-delete {
+  background-color: red;
+  border-radius:9px;
+}
+.btn-edit {
+  background-color: yellow;
+  border-radius:9px;
+}
+.actions {
+  display: flex;
+}
+.actions .btn {
+   margin-left: 5px;
+}
+.list2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f8f9fa;
 }
 
 </style>
