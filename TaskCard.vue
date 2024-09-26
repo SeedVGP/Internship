@@ -1,32 +1,21 @@
 <script>
-const tasks = [{
-  id: 1,
-  title: 'Office Design ',
-  name: 'Your company, Joel Wills',
-  date:'04/02/2023 - 08/03/2023'
- 
-},
-{
-  id: 2,
-   title: 'Office Design ',
-  name: 'Your company, Joel Wills',
-  date:'04/02/2023 - 08/03/2023'
-  
-}
-,
-{
-  id: 3,
-  title: 'Office Design ',
-  name: 'Your company, Joel Wills',
-  date:'04/02/2023 - 08/03/2023'
-  
-}]
 export default {
   data() {
     return {
-      tasks
+      tasks:[]
     };
-  }
+  },
+  
+  methods:{
+    async fetchTasks() {
+        const response = await fetch('http://127.0.0.1:8000/tasks');
+        this.tasks= await response.json();
+    }
+  },
+mounted() {
+    this.fetchTasks();
+
+  },
 };
 </script>
 <template>
@@ -62,8 +51,6 @@ export default {
 <style scoped>
 
 .card {
-flex: 1 1 300px;
- 
   width: 350px;
   max-height: 227px;
   height:100%;
@@ -89,14 +76,11 @@ flex: 1 1 300px;
   font-size: 1.1rem;
 }
 .progress {
-
   width: 350px; 
   height: 9px;
   margin: 4px -17px;
 }
-
 .progress-bar {
-
   height: 20px;
 }
 .profile-pic {
