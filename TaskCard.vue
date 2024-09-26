@@ -26,7 +26,6 @@ mounted() {
      <img src="../assets/images.jpeg" alt="Profile Picture" class="profile-pic">
       <i class="fas fa-flag" style="color: red; margin-left: auto; font-size: 0.8rem; position: relative; top: -4px;"></i>
     </h5>
-    
     <p class="card-text " style="font-size: 0.9rem;color:blue;">9 Tasks <i class="far fa-check-square"></i> 1/3 <i class="far fa-clock"></i></p>
     <hr class="custom-line">
     <p class="card-text text-muted" style="font-size: 0.85rem;"><i class="fas fa-user"></i> {{task.name}}</p>
@@ -44,8 +43,6 @@ mounted() {
     </div>
   </div>
 </div>
-
-
 </template>
 <style scoped>
 
@@ -96,22 +93,18 @@ mounted() {
     flex: 1 1 100%;
     width: 270px; 
   }
-
   .task-container {
     flex-direction: column;
     align-items: center;
   }
-
   .profile-pic {
     margin-left: auto;
   }
-      .progress {
-  
+  .progress {
     width: 270px; 
     height: 9px;
     margin: 15px -17px;
-  }
-    
+  } 
 }
 
 @media (max-width: 480px) {
