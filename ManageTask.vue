@@ -121,12 +121,10 @@ font-size: 0.8rem;
 }
 .groupby-button:hover, 
 .filter-button:hover, 
-.favorites-button:hover {
+.favorites-button:hover,
+.arrow-button:hover {
   background-color: grey;
-  
 }
-
-
 .icon {
   margin-left: 8px;
 }

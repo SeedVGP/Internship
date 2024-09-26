@@ -5,16 +5,15 @@
         <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
           <ul class="nav nav-pills flex-column mb-0 align-items-center align-items-sm-start" id="menu">
             <li v-for="(menuItem, index) in menuItems" :key="index" class="nav-item">
-              <a href="#" class="nav-link px-0 align-middle">
+               <router-link :to="menuItem.path" class="nav-link px-0 align-middle" >
                 <i :class="menuItem.icon" class="menu-icon"></i>
                 <span class="menu-name ms-2" :class="{ 'd-none': !isVisible, 'd-sm-inline': isVisible }">{{ menuItem.name }}</span>
-              </a>
+             </router-link>
             </li>
-          </ul>
+          </ul>  
         </div>
       </div>
     </div>
-   
   </div>
 </template>
 
@@ -24,25 +23,25 @@ export default {
   data() {
     return {
       menuItems: [
-        { name: 'Dashboard', icon: 'bi bi-bar-chart-fill' },
+        { name: 'Dashboard', icon: 'bi bi-bar-chart-fill',path:'/' },
         { name: 'Discuss', icon: 'fa-regular fa-comments' },
-        { name: 'Calendar', icon: 'fa-regular fa-calendar-alt' },
+        { name: 'Calendar', icon: 'fa-regular fa-calendar-alt' ,path: '/calender'},
         { name: 'Notes', icon: 'fa-regular fa-sticky-note' },
         { name: 'Knowledge', icon: 'fa fa-book' },
         { name: 'Contacts', icon: 'fa-regular fa-address-book' },
         { name: 'CRM', icon: 'fa-regular fa-handshake' },
         { name: 'Sales', icon: 'fa fa-chart-line' },
-        { name: 'Dashboard', icon: 'bi bi-bar-chart-fill' },
+        { name: 'Dashboard', icon: 'bi bi-bar-chart-fill',path:'/' },
         { name: 'Discuss', icon: 'fa-regular fa-comments' },
-        { name: 'Calendar', icon: 'fa-regular fa-calendar-alt' },
+        { name: 'Calendar', icon: 'fa-regular fa-calendar-alt' ,path: '/calender'},
         { name: 'Notes', icon: 'fa-regular fa-sticky-note' },
         { name: 'Knowledge', icon: 'fa fa-book' },
         { name: 'Contacts', icon: 'fa-regular fa-address-book' },
         { name: 'CRM', icon: 'fa-regular fa-handshake' },
         { name: 'Sales', icon: 'fa fa-chart-line' },
-        { name: 'Dashboard', icon: 'bi bi-bar-chart-fill' },
+        { name: 'Dashboard', icon: 'bi bi-bar-chart-fill',path:'/' },
         { name: 'Discuss', icon: 'fa-regular fa-comments' },
-        { name: 'Calendar', icon: 'fa-regular fa-calendar-alt' },
+        { name: 'Calendar', icon: 'fa-regular fa-calendar-alt' ,path: '/calender'},
         { name: 'Notes', icon: 'fa-regular fa-sticky-note' },
         { name: 'Knowledge', icon: 'fa fa-book' },
         { name: 'Contacts', icon: 'fa-regular fa-address-book' },

@@ -2,10 +2,9 @@
 
 import AppBar from './components/AppBar.vue';
 import SideBar from './components/SideBar.vue';
-import ManageTask from './components/ManageTask.vue';
-import TaskColumn from './components/TaskColumn.vue';
+
 export default {
-  components: { AppBar, SideBar, ManageTask,TaskColumn },
+  components: { AppBar, SideBar },
   data() {
     return {
       isSidebarVisible: true
@@ -30,8 +29,7 @@ export default {
      <SideBar :isVisible="isSidebarVisible"/>
      </div>
       <div class="content-area">
-        <ManageTask />
-        <TaskColumn/>
+       <router-view />   
       </div>
     </div>
   </div>
@@ -70,7 +68,8 @@ body {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  overflow-y: auto
+  overflow-y: auto;
+
 } 
 
 </style>
