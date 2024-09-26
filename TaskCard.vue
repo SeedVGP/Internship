@@ -31,7 +31,6 @@ mounted() {
     <hr class="custom-line">
     <p class="card-text text-muted" style="font-size: 0.85rem;"><i class="fas fa-user"></i> {{task.name}}</p>
     <p class="card-text text-muted" style="font-size: 0.85rem;"><i class="far fa-calendar-check"></i> {{task.date}}</p>
-  
     <div class="d-flex justify-content-end" style="margin-top:-2px;">
       <div>  
         <i class="fas fa-star" style="color: yellow;"></i>
