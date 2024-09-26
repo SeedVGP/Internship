@@ -18,7 +18,6 @@ mounted() {
 };
 </script>
 <template>
-
 <div v-for="task in tasks" :key="task.id" class="card" >
   <div class="card-body">
     <h5 class="card-title">{{ task.title }}
@@ -44,7 +43,6 @@ mounted() {
 </div>
 </template>
 <style scoped>
-
 .card {
   width: 350px;
   max-height: 227px;
