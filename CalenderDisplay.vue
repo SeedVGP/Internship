@@ -14,12 +14,15 @@
       <h3>To-Do List</h3>
       <div class="input-container">
       <input v-model="newTask" placeholder="Add a new task" />
-      <button class="btn-add" @click="addTask"><i class="fas fa-plus"></i></button>
+      <div>
+      <button class=" btn-add" @click="addTask"><i class="fas fa-plus"></i></button>
       <button @click="closeTodoList" class="btn-close"></button>
+      </div>
     </div>
+
     <ul class="list">
-      <li v-for="(task,index) in tasks" :key="index" class="list2">
-      {{task}}
+      <li v-for="(task,index) in tasks" :key="index"  class="list2 ">
+       {{task}}
       <div class="action">
       <button  class="btn btn-delete" @click="removeTask(index)"><i class="fas fa-trash-alt"></i></button>
      </div>
@@ -45,8 +48,9 @@ export default {
   },
   methods: {
    addTask() {
-      this.tasks.push(this.newTask);
+      this.tasks.push(this.newTask,);
       this.newTask = '';
+
    },
    removeTask(index) {
      this.tasks.splice(index, 1);
@@ -71,11 +75,13 @@ export default {
 }
 .todo-modal {
   margin-top: 20px;
-  padding: 20px;
+  padding: 10px;
   background-color: #fff;
   border: 1px solid #ccc;
   text-align: center; 
-  width:400px;
+  width:100%;
+  max-width:500px;
+  
 }
 .todo-modal button {
   margin: 13px;
@@ -86,6 +92,7 @@ export default {
   display: flex;
   margin-bottom: 20px;
 }
+
 input {
   flex: 1;
   padding: 10px;
@@ -101,6 +108,7 @@ input {
   border: none;
   color: white;
 }
+
 .list {
   list-style-type:none ;
   padding:0;
@@ -129,5 +137,21 @@ input {
   border-radius: 5px;
   background-color: #f8f9fa;
 }
+
+@media (max-width: 768px) {
+    
+.input-container{
+ flex-direction: column; 
+ align-items: flex-start;
+
+}
+input{
+  width:100%;
+  }
+.list{
+ font-size:13px;
+}
+}
+
 
 </style>
