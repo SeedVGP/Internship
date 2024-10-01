@@ -58,7 +58,7 @@ export default{
       <h5 class="card-title">{{ item.title }}</h5>
       <h6 class=" mb-2 text-muted">{{ item.date }}</h6>
       <p class="card-text">{{ item.note }}</p>
-      <button @click="deleteNote(index)" class="btn btn-danger">
+      <button class="btn btn-danger">
        <i class="fas fa-trash-alt"></i>
       </button>
   </div>
