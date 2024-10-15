@@ -179,7 +179,7 @@ import axios from 'axios';
 
 /**
  * SidePanel component that displays categories, apps, and subcategories. Categories,apps and subcategories are the items in the sidebar.
- *
+ * This is the sidebar for small screen. While clicking the toggle button the side panel expands.
  * @component
  */
 export default {
@@ -194,6 +194,7 @@ export default {
   methods: {
     /**
      * Fetch sidebar categories from the API.
+     * fetchSidebar() methods fetches the one set of sidebar items from the api
      *
      * @async
      * @returns {Promise<void>}
@@ -209,6 +210,7 @@ export default {
     },
     /**
      * Fetch apps data from the API.
+     * fetchApps() method fetches the another set of sidebar items from the api
      *
      * @async
      * @returns {Promise<void>}
@@ -222,12 +224,7 @@ export default {
         console.error('Error fetching apps:', error);
       }
     },
-    /**
-     * Toggle the visibility of the sidebar.
-     */
-    toggleSidebar() {
-      this.isSidebarOpen = !this.isSidebarOpen; // Toggle sidebar visibility
-    },
+    
     /**
      * Update state when sidebar is hidden.
      */
