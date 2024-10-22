@@ -1,4 +1,3 @@
-// CounterComponent.test.js
 import { shallowMount } from '@vue/test-utils';
 import CounterComponent from '@/components/CounterComponent.vue';
 
